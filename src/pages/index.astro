@@ -1,16 +1,21 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Projects from "../data/projects.json";
+import Project from "../components/Project.astro";
+const pageTitle = "Me";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>My home page</h2>
+  {
+    Projects.map((project) => (
+      <Project
+        name={project.name}
+        description={project.description}
+        imagePath={project.image}
+        imageAltText={project.altText}
+        url={project.link}
+      />
+    ))
+  }
+</BaseLayout>

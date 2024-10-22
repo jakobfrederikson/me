@@ -1,0 +1,27 @@
+[
+  {
+    "name": "ArgoCMS",
+    "description": "A company management system created in ASP.NET Core.",
+    "image": "/test.jpg",
+    "altText": "Slideshow GIF showing multiple screens of the Argo App",
+    "link": "https://github.com/jakobfrederikson/ArgoCMS"
+  },
+  {
+    "name": "CatFactsAgain",
+    "description": "Request random cat facts from an external API.",
+    "image": "/test.jpg",
+    "link": "https://github.com/jakobfrederikson/CatFactsAgain"
+  },
+  {
+    "name": "HabitLogger",
+    "description": "Console app that stores habits, to which you can then log how often you perform that habit.",
+    "image": "/test.jpg",
+    "link": "https://github.com/jakobfrederikson/HabitLogger"
+  },
+  {
+    "name": "YellowPages",
+    "description": "Console app that keeps a list of contacts that you can organise into categories. ",
+    "image": "/test.jpg",
+    "link": "https://github.com/jakobfrederikson/YellowPages"
+  }
+]
