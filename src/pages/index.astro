@@ -1,19 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Projects from "../data/projects.json";
-import Project from "../components/Project.astro";
+import Card from "../components/Card.astro";
 const pageTitle = "Me";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h2>My home page</h2>
+  <p>
+    Hello, I'm Jakob Frederikson, a Software Engineering graduate working in
+    Customer Service for the time being.
+  </p>
+  <h2>My selected projects</h2>
+  <hr />
   {
     Projects.map((project) => (
-      <Project
+      <Card
         name={project.name}
         description={project.description}
         imagePath={project.image}
-        imageAltText={project.altText}
+        altText={project.altText}
         url={project.link}
       />
     ))

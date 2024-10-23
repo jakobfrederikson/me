@@ -1,0 +1,14 @@
+---
+import Socials from "../data/socials.json";
+import Social from "./Social.astro";
+---
+
+{
+  Socials.map((social) => (
+    <Social
+      platform={social.platform}
+      link={social.link}
+      iconPath={social.iconPath}
+    />
+  ))
+}
