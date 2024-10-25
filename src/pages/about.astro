@@ -1,8 +1,54 @@
 ---
+import { Image } from "astro:assets";
+import blackOps from "../assets/about/blackops.jpg";
+import thumbsUp from "../assets/about/thumbs-up.jpg";
+import strong from "../assets/about/when-I-was-strong.jpg";
+import skyTower from "../assets/about/sky-tower.jpg";
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "About";
+const pageTitle = "**ABOUT**";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h2>About me</h2>
+  <h2>**WHO AM I?**</h2>
+  <div class="image-wrapper">
+    <Image src={blackOps} alt="test" />
+    <Image src={thumbsUp} alt="test" />
+    <Image src={strong} alt="test" />
+    <Image src={skyTower} alt="test" />
+  </div>
+  <p>I have been a weirdo nerd for 24 years and counting.</p>
+
+  <p>
+    I grew up in Saudi Arabia from 5 - 13 years old, due to my dad's job (did
+    something techy with a techy company or something...). In the desert, there
+    is not a lot to do, which was awesome because it meant I got to spend heaps
+    of time on the computer.
+  </p>
 </BaseLayout>
+
+<style>
+  body {
+    max-width: 80%;
+  }
+  .image-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    max-width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .image-wrapper {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 8px;
+    }
+  }
+</style>

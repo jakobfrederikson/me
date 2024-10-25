@@ -2,15 +2,15 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Projects from "../data/projects.json";
 import Card from "../components/Card.astro";
-const pageTitle = "Me";
+const pageTitle = "**ME**";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <p>
-    Hello, I'm Jakob Frederikson, a Software Engineering graduate working in
-    Customer Service for the time being.
+    Hello, I'm Jakob Frederikson, a software engineer open to tech roles. I
+    currently work for Inland Revenue (IR) as a Customer Service Officer.
   </p>
-  <h2>My selected projects</h2>
+  <h2>**MY PROJECTS**</h2>
   <hr />
   {
     Projects.map((project) => (
