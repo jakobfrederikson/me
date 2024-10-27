@@ -1,0 +1,49 @@
+{
+  "skills": {
+    "techSkills": ["HTML", "CSS", "JavaScript", "C#", "SQL", "UI/UX Design"],
+    "otherSkills": [
+      "Digital literacy",
+      "Teamwork",
+      "Fast-paced learning",
+      "Customer Service",
+      "Written/Verbal Communication",
+      "Problem-solving"
+    ]
+  },
+  "bucketList": [
+    {
+      "item": "Get a degree",
+      "completed": true,
+      "dateCompleted": "28-11-2023"
+    },
+    {
+      "item": "Get my first job in tech",
+      "completed": false
+    },
+    {
+      "item": "Have my code executed by a device not on planet Earth",
+      "completed": false
+    },
+    {
+      "item": "Create a game in Godot",
+      "completed": false
+    },
+    {
+      "item": "See the Hurricanes win a Super Rugby final in person",
+      "completed": false
+    },
+    {
+      "item": "See the Lions win an NPC final in person",
+      "completed": true,
+      "dateCompleted": "26-10-2024"
+    },
+    {
+      "item": "See the Warriors win an NRL final in person",
+      "completed": false
+    },
+    {
+      "item": "Go to a Rugby World Cup game",
+      "completed": false
+    }
+  ]
+}

@@ -1,11 +1,28 @@
 ---
 import { Image } from "astro:assets";
+import aboutData from "../data/about.json";
+const { skills, bucketList } = aboutData;
 import blackOps from "../assets/about/blackops.jpg";
 import thumbsUp from "../assets/about/thumbs-up.jpg";
 import strong from "../assets/about/when-I-was-strong.jpg";
 import skyTower from "../assets/about/sky-tower.jpg";
+import checkMark from "../assets/about/check-mark.png";
+import cancel from "../assets/about/cancel.png";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "**ABOUT**";
+
+const age = function () {
+  const today = new Date();
+  const birthDate = new Date("1999-12-06");
+  let calculatedAge = today.getFullYear() - birthDate.getFullYear();
+  if (
+    today <
+    new Date(today.getFullYear(), birthDate.getFullYear(), birthDate.getDate())
+  ) {
+    calculatedAge--;
+  }
+  return calculatedAge;
+};
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -17,64 +34,159 @@ const pageTitle = "**ABOUT**";
     <Image src={skyTower} alt="test" />
   </div>
   <p>
-    I'm Jakob, a guy born in Wellington NZ that has been a geek for 24 years and
-    counting.
+    I'm Jakob. I was born in Wellington NZ and have been a geek for {age} years and
+    counting. I love playing video games, watching Rugby and NRL, making cool software
+    (games/websites/web apps), and learning new stuff.
   </p>
 
   <p>
-    I was a loud and cheeky kid that always had to be kept occupied because
-    otherwise I was up in your face telling you 'I'M BORED' or somewhere around
-    the house trying to stick my finger into an electrical socket (my parents
-    have this on tape). This was fixed by my geeky dad who chucked me on a
-    computer. This meant that I was always within his sight while he played his
-    own games and I was now quiet becuase I was mesmerised by the colours on the
-    Far Cry 1 demo that I played probably 100+ times.
+    I was a cheeky kid who always had to be kept occupied because otherwise I
+    was up in your face telling you 'I'M BORED' or somewhere around the house
+    trying to stick my finger into an electrical socket (my parents have this on
+    tape). This was fixed by my geeky dad who chucked me on a computer. This
+    meant that I was always within his sight while he played his own games and I
+    was now quiet while being mesmerised by the Far Cry 1 demo that I played
+    probably 30+ times.
   </p>
 
   <p>
     My family left NZ to live in Riyadh, Saudi Arabia when I was 5 years old
     becuase of my dad's job. My brother and I went to an international school
-    while we lived there which was a genuinely fantastic experience. Our
-    teachers, friends, and neighbours were from all over the world and I really
-    thought it was normal that going to a friends house meant it's time to learn
-    all about another entirely different culture.
+    which was a genuinely fantastic experience. Our teachers, friends, and
+    neighbours were from all over the world and I really thought it was normal
+    that going to a friend's house meant it's time to learn all about another
+    entirely different culture.
   </p>
 
   <p>
-    In-between playing football, riding our bikes and skating with my friends on
-    the compound in Saudi Arabia, I put a <strong>*lot*</strong> of hours into video
-    games like Team Fortress 2, Counter-Strike: Source, World of Warcraft, League
-    of Legends, COD and Minecraft. I started to get really interested in the video-game
-    environments and wanted to know how they were created, which was my first introduction
+    In-between playing soccer with mates, riding our bikes and skating with my
+    friends on the compound in Saudi Arabia, I put a <strong>*lot*</strong> of hours
+    into video games like Team Fortress 2, Counter-Strike: Source, World of Warcraft,
+    League of Legends, COD and Minecraft. I ended up being a moderator/admin on some
+    of the multiplayer games, which is pretty funny looking back that some hackers
+    and potty mouths got banned by a 10 year old. Around this time, I started to
+    get really curious about how video games were created, which was my first introduction
     to 'going behind the scenes of applications'.
   </p>
 
   <p>
     I attempted to learn the 'Microsoft Small Basic' language, was watching
-    YouTube tutorials on how to make maps for CS:S and then use PhotoShop. The
-    idea was that I was going to code my own game, make the maps, and then
+    YouTube tutorials on how to make maps for CS:S, and 'downloaded' PhotoShop.
+    The idea was that I was going to code my own game, make the maps, and then
     create the artwork needed for the Steam page. At the age of 11, I then
-    released 3 different maps for CS:S, 2 of which actually got put into the map
-    rotation by the gaming organisation I was with at the time (<a
+    released 3 different maps for CS:S, 2 of which (<a
       href="https://gamebanana.com/mods/114146"
       target="_blank">fy_scoutania</a
     > and <a href="https://gamebanana.com/mods/108925" target="_blank"
       >aim_texturecity_v1</a
-    >). Unfortunately, I didn't quite grasp the concept of spawn points or buy
-    zones which caused the maps to simply not work once there were more than ~5
-    players, so they didn't stay for very long. I ended up getting really bored
-    of programming and dropped it completely while PhotoShop became my new toy.
-    Why was it so hard to simply <strong>
-      <code is:raw>public Game CreateEntireGame() {}</code>?
+    >) actually got put into the map rotation by the gaming organisation I was
+    apart of. Unfortunately, I didn't quite grasp the concept of spawn points or
+    buy zones which caused the maps to simply not work once there were more than
+    ~5 players, so they didn't stay for very long. I got a little sad and
+    discouraged when the maps were taken off rotation. But, I felt really happy
+    that I was able to learn this <a
+      href="https://developer.valvesoftware.com/wiki/Valve_Hammer_Editor"
+      target="_blank">weird old software</a
+    > to create maps that even LOOKED good enough to be added to a server. Learning
+    Small Basic was also something I found really enjoyable and it definitely gave
+    me the itch for programming, but, I ended up getting slightly disinterested because
+    I couldn't grasp why there wasn't a
+    <strong>
+      <code is:raw>public Game CreateEntireGame() {}</code> function.
     </strong>
   </p>
 
   <p>
-    We came back to NZ when I was 13 and my passion for playing and learning
-    about video-games never stopped. I ended up meeting my bestfriend, Stefan,
-    who at some point who introduced me to his own friend group, another bunch
-    of geeks with like-minded interests. To this day, we're all still mates an
+    We came back to NZ when I was 13 and I was fortunate enough to have made
+    some life-long friends at my new school and even go on a Europe trip with
+    them. My final year was in 2017, and after that I decided it was time to try
+    a degree in Psychology. It was absolutely not my thing, in fact it was so
+    boring I literally fell asleep during the lectures. I was finding life quite
+    tough at this point, so I took some time to 'find my self' (deal with my
+    depression and anxiety). At age 20, I acquired a certificate in Creative
+    Media and then started a diploma in Web & Graphic Design, where I made some <a
+      href="/src/assets/about/Brochure_Doc_PinkNics.pdf"
+      target="_blank">cool stuff</a
+    >. About halfway through the diploma (where they had us create basic HTML
+    sites), I started getting that itch for programming again. I decided to try
+    my luck and apply for the Bachelor in Software Engineering at Yoobee
+    Colleges, to which I then acquired the 3 years free scholarship as well.
   </p>
+
+  <p>
+    I met some of the smartest people I know from that degree, and I had the
+    pleasure of designing and creating some awesome software with them as well,
+    like a <a
+      href="https://github.com/jakobfrederikson/SchoolLunchOrderSystem"
+      target="_blank">School Lunch Ordering System</a
+    > that has 5000+ lines of code in one C++ file (1st year things), a <a
+      href="https://github.com/jandrealyn/LibraryQtSystem"
+      target="_blank">Library System made with QT</a
+    >, and an <a
+      href="https://github.com/jakobfrederikson/Cloudroom"
+      target="_blank">online education platform made with Flask</a
+    >. My last year is where I went solo and made <a
+      href="https://github.com/jakobfrederikson/ArgoCMS"
+      target="_blank">Argo</a
+    >, a web application made in ASP.NET that uses Razor Pages, SignalR, and
+    EFCore to create a pretty cool company management system.
+  </p>
+
+  <p>
+    And now here we are. I don't have a gig in tech just yet, but that doesn't
+    stop me from having fun outside of work where I continue teach myself about
+    fun tech like <a href="https://godotengine.org/" target="_blank">Godot</a> or
+    learn a new web framework like <a
+      href="https://astro.build/"
+      target="_blank">Astro</a
+    >. I've become a `point of contact` at our Upper Hutt office for our IT team
+    in Wellington in case someone from our office needs extra assistance, and
+    I'm the go-to person for my coworkers when they run into tech issues; like
+    their monitors not working after getting a new docking station or someone
+    changing desks and their keyboard won't unplug. I love lending a hand for
+    people that thought their issue was going to ruin their day because
+    sometimes I end up learning a long the way (like finding out why the
+    keyboard coudln't unplug).
+  </p>
+
+  <div class="about-skills-bucketlist">
+    <div class="skills-section">
+      <h2>**SKILLS**</h2>
+      <div class="skills">
+        <div class="tech-skills">
+          <h3>Tech Skills</h3>
+          <ul>{skills.techSkills.map((skill) => <li>{skill}</li>)}</ul>
+        </div>
+        <div class="other-skills">
+          <h3>Other Skills</h3>
+          <ul>{skills.otherSkills.map((skill) => <li>{skill}</li>)}</ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="bucketlist-section">
+      <h2>**BUCKET LIST**</h2>
+      <ul class="bucketlist">
+        {
+          bucketList.map((item) => (
+            <li class="bucketlist-item">
+              <Image
+                src={item.completed ? checkMark : cancel}
+                alt={item.completed ? "Completed" : "Not completed"}
+                class="item-image"
+              />
+              <span class="item-text">
+                {item.item}
+                {item.completed
+                  ? `(Completed on ${item.dateCompleted})`
+                  : "(Not completed)"}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
 </BaseLayout>
 
 <style>
@@ -96,16 +208,61 @@ const pageTitle = "**ABOUT**";
     object-fit: cover;
   }
 
+  code {
+    padding: 5px;
+    background-color: antiquewhite;
+    color: black;
+  }
+
+  .about-skills-bucketlist {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .skills-section,
+  .bucketlist-section {
+    flex: 1;
+  }
+
+  .skills {
+    display: flex;
+  }
+
+  .bucketlist {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .bucketlist-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1px;
+  }
+
+  .item-image {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    object-fit: cover;
+  }
+
+  .item-text {
+    display: inline-block;
+    text-align: left;
+  }
+
   @media (max-width: 768px) {
     .image-wrapper {
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
       gap: 8px;
     }
-  }
 
-  code {
-    padding: 5px;
-    background-color: antiquewhite;
-    color: black;
+    .about-skills-bucketlist {
+      flex-direction: column;
+    }
+
+    .skills {
+      flex-direction: column;
+    }
   }
 </style>
