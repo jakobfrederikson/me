@@ -1,3 +1,5 @@
+[View the site](https://jfreddy.netlify.app/about/)
+
 # Astro Starter Kit: Minimal
 
 ```sh
