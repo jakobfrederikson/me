@@ -44,6 +44,10 @@
     {
       "item": "Go to a Rugby World Cup game",
       "completed": false
+    },
+    {
+      "item": "See the All Blacks win a Rugby World Cup in person",
+      "completed": false
     }
   ]
 }
