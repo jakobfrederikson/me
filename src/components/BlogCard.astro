@@ -1,0 +1,88 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+const { name, pubDate, description, imagePath, altText, url } = Astro.props;
+
+// Dynamically load images
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  `/src/assets/blog/icons/*.{jpeg,jpg,png,gif}`
+);
+if (!images[imagePath])
+  throw new Error(
+    `"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+  );
+---
+
+<div class="card-container">
+  <a href=`${url}` class="card">
+    <div class="card-icon">
+      <Image src={images[imagePath]()} alt={altText} />
+    </div>
+    <div class="card-content">
+      <h2 class="card-title">{name}</h2>
+      <p class="card-description">{pubDate}</p>
+      <p class="card-description">{description}</p>
+    </div>
+  </a>
+</div>
+
+<style>
+  .card-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .card {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    overflow: hidden;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    padding: 15px;
+    border: 5px dashed #395234;
+    color: rgb(255, 255, 255);
+  }
+
+  .card:hover {
+    border: 5px dashed #4af626;
+  }
+  .card:hover .card-description {
+    color: white;
+  }
+
+  .card-icon img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+
+  .card-content {
+    margin-left: 15px;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
+    color: #b4b4b4;
+  }
+
+  @media (max-width: 768px) {
+    .card-container {
+      max-width: 100%;
+    }
+
+    .card-title {
+      font-size: 1rem;
+    }
+
+    .card-description {
+      font-size: 0.8rem;
+    }
+  }
+</style>
