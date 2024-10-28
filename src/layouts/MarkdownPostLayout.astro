@@ -1,12 +1,30 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
+
+// Dynamically load images
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  `/src/assets/blog/icons/*.{jpeg,jpg,png,gif}`
+);
+
+const imagePath = frontmatter.image.url;
+
+if (!images[imagePath])
+  throw new Error(
+    `"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+  );
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
   <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
   <p><em>{frontmatter.description}</em></p>
   <p>Written by {frontmatter.author}</p>
-  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+  <Image
+    src={images[imagePath]()}
+    width="300"
+    height="300"
+    alt={frontmatter.image.alt}
+  />
   <slot />
 </BaseLayout>
