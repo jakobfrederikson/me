@@ -3,28 +3,35 @@
     "name": "ArgoCMS",
     "description": "A task, project, team, and user management system created in ASP.NET Core.",
     "image": "/src/assets/anchor.png",
-    "altText": "Slideshow GIF showing multiple screens of the Argo App",
+    "altText": "Anchor icon to represent the Argo boat",
     "link": "https://github.com/jakobfrederikson/ArgoCMS"
   },
   {
     "name": "CatFactsAgain",
     "description": "Request random cat facts from an external API using a Blazor frontend and ASP.NET backend.",
     "image": "/src/assets/cat.png",
-    "altText": "Slideshow GIF showing multiple screens of the Argo App",
+    "altText": "Cat icon",
     "link": "https://github.com/jakobfrederikson/CatFactsAgain"
   },
   {
     "name": "HabitLogger",
-    "description": "C# console app that lets you store habits and log how often you perform that habbit. All database queries written in code, for fun.",
+    "description": "C# console app with hand written SQL queries that lets you store habits and log how often you perform that habbit.",
     "image": "/src/assets/notebook.png",
-    "altText": "Slideshow GIF showing multiple screens of the Argo App",
+    "altText": "Notebook icon",
     "link": "https://github.com/jakobfrederikson/HabitLogger"
   },
   {
     "name": "YellowPages",
-    "description": "C# console app that lets you keep a list of contacts that you can organise into categories.",
+    "description": "C# console app using Entity Framework to store a list of contacts that you can organise into categories.",
     "image": "/src/assets/book-cover.png",
-    "altText": "Slideshow GIF showing multiple screens of the Argo App",
+    "altText": "Book icon",
     "link": "https://github.com/jakobfrederikson/YellowPages"
+  },
+  {
+    "name": "This Website",
+    "description": "Resume site to show information about me. Made with the HTML/CSS/JS and the Astro web framework.",
+    "image": "/src/assets/mouse.png",
+    "altText": "Mouse icon",
+    "link": "https://github.com/jakobfrederikson/me"
   }
 ]
