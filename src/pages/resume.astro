@@ -1,16 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import JobTimeline from "../components/JobTimeline.astro";
 const pageTitle = "**RESUME**";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h2>**THE GOOD STUFF** (more info to come)</h2>
-  <ul>
-    <li>Inland Revenue - Customer Service Officer - Feb 2024 - Present</li>
-    <li>
-      Victoria University Tutour (Marker for assignments) - Sep 2022 - Jan 2023
-    </li>
-    <li>McDonalds Silverstream - Jan 2021 - November 2023</li>
-    <li>New World Silverstream - Jan 2017 - Jan 2019</li>
-  </ul>
+  <h2>**THE GOOD STUFF**</h2>
+  <JobTimeline />
 </BaseLayout>

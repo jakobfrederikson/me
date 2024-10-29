@@ -1,0 +1,58 @@
+---
+import Jobs from "../data/jobs.json";
+
+const jobs = Jobs.toReversed();
+---
+
+<h3>Education</h3>
+<div class="job-wrapper">
+  <div class="job-content">
+    <h3 class="job-title">Yoobee Colleges, Bachelor of Software Engineering</h3>
+    <div class="job-date">2021 - 2023</div>
+    <p class="job-description">
+      Lead and designed projects with a team, developed skills in public
+      speaking and both technical and non-technical documentation. Used C++,
+      HTML/CSS/JS, Python and C# for projects, learned multiple frameworks and
+      technologies under short time-constraints.
+    </p>
+  </div>
+</div>
+
+<h3>Experience</h3>
+<div class="timeline">
+  {
+    jobs.map((job) => (
+      <div class="job-wrapper">
+        <div class="job-content">
+          <h3 class="job-title">
+            {job.title} - {job.position}
+          </h3>
+          <div class="job-date">
+            {job.start} - {job.end}
+          </div>
+          <p class="job-description">{job.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .job-wrapper {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .job-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 3px dashed #395234;
+    padding: 20px;
+  }
+
+  h3,
+  p {
+    margin: 0px;
+  }
+</style>
