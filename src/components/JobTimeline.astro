@@ -1,7 +1,7 @@
 ---
 import Jobs from "../data/jobs.json";
 
-const jobs = Jobs.toReversed();
+const jobs = Array.isArray(Jobs) ? Jobs.toReversed() : Jobs;
 ---
 
 <h3>Education</h3>
