@@ -18,7 +18,8 @@
     },
     {
       "item": "Get my first job in tech",
-      "completed": false
+      "completed": true,
+      "dateCompleted": "09-12-2024"
     },
     {
       "item": "Have my code executed by a device not on planet Earth",
