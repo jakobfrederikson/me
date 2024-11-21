@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogCard from "../components/BlogCard.astro";
 const allPosts = await Astro.glob("./posts/*.md");
+allPosts.reverse();
 const pageTitle = "**BLOG**";
 ---
 

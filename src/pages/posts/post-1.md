@@ -7,6 +7,7 @@ author: "Jakob Frederikson"
 image:
   url: "/src/assets/blog/icons/protection-glasses.png"
   alt: "Protection Glasses Icon"
+tags: ["general"]
 ---
 
 # My First Blog Post
