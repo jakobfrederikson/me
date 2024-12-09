@@ -12,6 +12,6 @@
   "dependencies": {
     "@fontsource-variable/montserrat": "^5.1.0",
     "@fontsource-variable/roboto-mono": "^5.1.0",
-    "astro": "^4.16.14"
+    "astro": "^5.0.4"
   }
 }
