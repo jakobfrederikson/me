@@ -14,6 +14,13 @@
     "link": "https://github.com/jakobfrederikson/CatFactsAgain"
   },
   {
+    "name": "Calculator App",
+    "description": "Recreation of the iPhone calculator made in Avalonia.",
+    "image": "/src/assets/calculator.png",
+    "altText": "Calculator icon",
+    "link": "https://github.com/jakobfrederikson/CalculatorApp"
+  },
+  {
     "name": "HabitLogger",
     "description": "C# console app with hand written SQL queries that lets you store habits and log how often you perform that habbit.",
     "image": "/src/assets/notebook.png",

@@ -107,3 +107,9 @@ html {
         display: none;
       }
   }
+
+  .post-2-images img {
+    max-width: 600px;
+    height: auto;
+    margin: 10px;
+  }
