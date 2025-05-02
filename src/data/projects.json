@@ -15,14 +15,14 @@
   },
   {
     "name": "Calculator App",
-    "description": "Recreation of the iPhone calculator made in Avalonia.",
+    "description": "Desktop app recreation of the iPhone calculator made in Avalonia.",
     "image": "/src/assets/calculator.png",
     "altText": "Calculator icon",
     "link": "https://github.com/jakobfrederikson/CalculatorApp"
   },
   {
     "name": "HabitLogger",
-    "description": "C# console app with hand written SQL queries that lets you store habits and log how often you perform that habbit.",
+    "description": "C#/SQL console app that lets you store habits and log how often you perform that habbit.",
     "image": "/src/assets/notebook.png",
     "altText": "Notebook icon",
     "link": "https://github.com/jakobfrederikson/HabitLogger"
@@ -36,7 +36,7 @@
   },
   {
     "name": "This Website",
-    "description": "Resume site to show information about me. Made with the HTML/CSS/JS and the Astro web framework.",
+    "description": "Resume site to show information about me. Made with the basic HTML/CSS/JS and the Astro web framework.",
     "image": "/src/assets/mouse.png",
     "altText": "Mouse icon",
     "link": "https://github.com/jakobfrederikson/me"
