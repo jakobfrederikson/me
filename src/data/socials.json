@@ -8,10 +8,5 @@
     "platform": "LinkedIn",
     "link": "https://www.linkedin.com/in/jakob-frederikson/",
     "iconPath": "/src/assets/social/In-White-72.png"
-  },
-  {
-    "platform": "Mastodon",
-    "link": "https://mastodon.social/@jakobfrederikson",
-    "iconPath": "/src/assets/social/logo-white.svg"
   }
 ]
