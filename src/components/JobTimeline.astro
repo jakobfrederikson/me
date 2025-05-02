@@ -1,22 +1,39 @@
 ---
+import { effect } from "astro:schema";
 import Jobs from "../data/jobs.json";
 
 const jobs = Jobs;
----
 
-<h3>Education</h3>
-<div class="job-wrapper">
-  <div class="job-content">
-    <h3 class="job-title">Yoobee Colleges, Bachelor of Software Engineering</h3>
-    <div class="job-date">2021 - 2023</div>
-    <p class="job-description">
-      Lead and designed projects with a team, developed skills in public
-      speaking and both technical and non-technical documentation. Used C++,
-      HTML/CSS/JS, Python and C# for projects, learned multiple frameworks and
-      technologies under short time-constraints.
-    </p>
-  </div>
-</div>
+let months = "";
+const durationMonths = (dateA, dateB) => {
+  const startDate = new Date(dateA);
+  const endDate = dateB ? new Date(dateB) : new Date(); // if dateB string exists, then create new date, otherwise fallback to today
+
+  const years = endDate.getFullYear() - startDate.getFullYear();
+  const months = endDate.getMonth() - startDate.getMonth();
+
+  const result = years * 12 + months;
+
+  if (result < 12)
+  {
+    return `${result} month${result === 1 ? '' : 's'}`;
+  }
+  else {
+    const years = Math.floor(result / 12);
+    const remainingMonths = result % 12;
+
+    if (remainingMonths === 0)
+    {
+      return `${years} year${years === 1 ? '' : 's'}`;
+    }
+    else
+    {
+      return `${years} year${years === 1 ? '' : 's'} and ${remainingMonths} month${remainingMonths === 1 ? '' : 's'}`;
+    }
+  }
+}
+
+---
 
 <h3>Experience</h3>
 <div class="timeline">
@@ -27,8 +44,8 @@ const jobs = Jobs;
           <h3 class="job-title">
             {job.title} - {job.position}
           </h3>
-          <div class="job-date">
-            {job.start} - {job.end}
+          <div class="job-date">            
+            {job.start} - {job.end || "Present" } <span style="font-weight: 400;">({durationMonths(job.start, job.end)})</span>
           </div>
           <p class="job-description">{job.description}</p>
         </div>
@@ -37,10 +54,32 @@ const jobs = Jobs;
   }
 </div>
 
+<h3>Education</h3>
+<div class="job-wrapper">
+  <div class="job-content">
+    <h3 class="job-title">Yoobee Colleges, Bachelor of Software Engineering</h3>
+    <div class="job-date">2021 - 2023 <span style="font-weight: 400;">({durationMonths("February, 2021", "November, 2023")})</span></div>
+    <p class="job-description">
+      Lead and designed projects with a team, developed skills in public
+      speaking and both technical and non-technical documentation. Used C++,
+      HTML/CSS/JS, Python and C# for projects, learned multiple frameworks and
+      technologies under short time-constraints.
+    </p>
+  </div>
+</div>
+
 <style>
   .job-wrapper {
     width: 100%;
     padding: 10px;
+  }
+
+  .job-title {
+    color: #4af626;
+  }
+
+  .job-date {
+    font-weight: bold;
   }
 
   .job-content {
